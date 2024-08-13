@@ -83,17 +83,20 @@ const obtenPacientesAsignadosAPediatria = (
     return pacientes.filter(paciente => paciente.especialidad === "Pediatra");
 };
 
-
+console.log(obtenPacientesAsignadosAPediatria(pacientes));
 
 //b) Queremos extraer la lista de pacientes asignados a *Pediatría* y que tengan una edad menor de 10 años.
 
-const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAños = (
   pacientes: Pacientes[]
 ): Pacientes[] => {
     return pacientes.filter(
         paciente => paciente.especialidad === "Pediatra" && paciente.edad < 10
       );
     };
+
+console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAños(pacientes));
+
 
 // Apartado 2
 // Queremos activar el protocolo de urgencia si cualquier de los pacientes tiene un ritmo cardíaco superior a 100 pulsaciones por minuto y una temperatura corporal superior a 39 grados.
@@ -109,6 +112,8 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
 
   return activarProtocolo;
 };
+
+console.log(activarProtocoloUrgencia(pacientes));
 
 
 // Apartado 3
@@ -126,6 +131,8 @@ const reasignaPacientesAMedicoFamilia = (
       }); 
 };
 
+console.log(reasignaPacientesAMedicoFamilia(pacientes));
+
 
 // Apartado 4
 // Queremos saber si podemos mandar al Pediatra a casa (si no tiene pacientes asignados), comprobar si en la lista hay algún paciente asignado a *pediatría*
@@ -133,6 +140,9 @@ const reasignaPacientesAMedicoFamilia = (
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     return pacientes.some(paciente => paciente.especialidad === "Pediatra");
 };
+
+console.log(HayPacientesDePediatria(pacientes));
+
 
 // Apartado 5
 // Queremos calcular el número total de pacientes que están asignados a la especialidad de *Medico de familia*, y lo que están asignados a *Pediatría* y a *cardiología*
@@ -169,3 +179,4 @@ const cuentaPacientesPorEspecialidad = (
       );
 };
 
+console.log(cuentaPacientesPorEspecialidad(pacientes));
